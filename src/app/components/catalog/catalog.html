@@ -1,0 +1,37 @@
+<div class="container mt-4">
+<h2 class="mb-4 text-center text-danger fw-bold display-5 titulo-catalogo">
+  Catálogo de Productos
+</h2>
+
+
+  <div class="mb-3">
+    <label class="form-label">Categoría</label>
+    <select
+      class="form-select"
+      [(ngModel)]="selectedCategoryId"
+      (change)="onCategoryChange()"
+    >
+      <option value="">-- Seleccione una categoría --</option>
+      <option *ngFor="let c of categories" [value]="c.id">
+        {{ c.name }}
+      </option>
+    </select>
+  </div>
+
+  <table class="table table-bordered table-striped" *ngIf="products.length > 0">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Producto</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>S/ {{ p.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
