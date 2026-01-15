@@ -10,10 +10,9 @@ import { ProductService, Product } from '../../services/product';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './catalog.html',
-  styleUrl: './catalog.css'
+  styleUrls: ['./catalog.css']
 })
 export class Catalog implements OnInit {
-
   categories: Category[] = [];
   products: Product[] = [];
   selectedCategoryId!: number;
